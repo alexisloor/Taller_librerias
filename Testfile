@@ -1,0 +1,8 @@
+DIR_TESTS=".tests"
+
+.PHONY: static dynamic
+static:
+	@bash $(DIR_TESTS)/test_static.sh
+
+dynamic:
+	@bash $(DIR_TESTS)/test_dynamic.sh

@@ -1,0 +1,15 @@
+# Binario ejecutable
+hash256
+
+# Object files
+*.o
+*.a
+*.so
+
+# Otros ejecutables
+*.exe
+*.out
+
+# Archivos temporales
+~*
+*.swp

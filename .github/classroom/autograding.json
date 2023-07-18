@@ -1,0 +1,34 @@
+{
+  "tests": [
+    {
+      "name": "Integridad test files",
+      "setup": "",
+      "run": "cat Testfile .tests/globals .tests/test_static.sh .tests/test_dynamic.sh | sha256sum",
+      "input": "",
+      "output": "f5c0363db3c5a438ac955201f49f8e066a283d3e435c77b2c5886dfec05863ed",
+      "comparison": "included",
+      "timeout": 2,
+      "points": null
+    },
+    {
+      "name": " Linking estático",
+      "setup": "",
+      "run": "make -f Testfile static",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 2,
+      "points": 2
+    },
+    {
+      "name": "Linking dinámico",
+      "setup": "",
+      "run": "make -f Testfile dynamic",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 2,
+      "points": 2
+    }
+  ]
+}
