@@ -7,12 +7,16 @@ EXEC = hash256
 CFLAGS := -L.
 
 .PHONY: static dynamic clean
-static: $(EXEC)
+static: $(SLIB) $(EXEC)
 
 dynamic:
 
-$(EXEC): main.c sha256.c
-	gcc -o $(EXEC) main.c sha256.c
+$(EXEC): main.c
+	gcc -static -o $(EXEC) main.c $(SLIB) -L.
+
+$(SLIB): sha256.c
+	gcc -c sha256.c
+	ar rcs $(SLIB) sha256.o	
 
 clean:
 	rm -rf $(EXEC) *.o $(SLIB) $(DLIB)

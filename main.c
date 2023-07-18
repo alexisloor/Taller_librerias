@@ -71,7 +71,6 @@ int main(int argc, char **argv)
 	sha256_init(&ctx);
 	sha256_update(&ctx, (const BYTE*)output_string, strlen(output_string));
 	sha256_final(&ctx, hash);
-	printf("Hash SHA-256 de '%s': ", output_string);
     	print_hex(hash, SHA256_BLOCK_SIZE);
 	printf("\n");
 
